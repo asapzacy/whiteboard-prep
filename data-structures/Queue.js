@@ -1,11 +1,11 @@
 
-//  implement a stack.
+//  implement a queue.
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
 
 
-class Stack {
+class Queue {
 
   constructor() {
     this.list = []
@@ -14,63 +14,64 @@ class Stack {
 
   /*  ------------------------------------------------------  */
 
-  //  add item to top of a stack.
-  push(item) {
+  //  add item to end of a queue.
+  enqueue(item) {
     this.length += 1
     this.list.push(item)
   }
 
   /*  ------------------------------------------------------  */
 
-  //  remove item from top of a stack.
-  pop() {
+  //  remove item from start of a queue.
+  dequeue() {
     if (this.length === 0) return
     this.length -= 1
-    return this.list.pop()
+    return this.list.shift()
   }
+
 
   /*  ------------------------------------------------------  */
 
-  //  return (without removing) item from top of a stack.
+  //  return (without removing) the top item from a queue.
   peek() {
-    return this.list[this.length - 1]
+    return this.list[0]
   }
 
   /*  ------------------------------------------------------  */
 
-  //  reverse order of a stack.
+  //  reverse the order of a queue.
   reverse() {
     const arr = []
-    for (let i = 0; i < this.length; i++) {
-      arr.push(this.list.pop())
+    for (let i = this.length - 1; i >= 0; i--) {
+      arr.push(this.list[i])
     }
     this.list = arr
   }
 
   /*  ------------------------------------------------------  */
 
-  //  return size of a stack.
+  //  return size of a queue.
   size() {
     return this.length
   }
 
   /*  ------------------------------------------------------  */
 
-  //  convert stack to an array (already is).
+  //  convert queue to an array (already is).
   toArray() {
     return this.list
   }
 
   /*  ------------------------------------------------------  */
 
-  //  convert stack to a string.
+  //  convert queue to a string.
   toString() {
     return this.toArray().toString()
   }
 
   /*  ------------------------------------------------------  */
 
-  //  clear a stack.
+  //  clear a queue.
   clear() {
     this.list = []
     this.length = 0
@@ -83,13 +84,13 @@ class Stack {
 /*  ------------------------------------------------------  */
 
 
-const s = new Stack()
-s.push(1)
-s.push(23)
-s.push(99)
-s.push(100)
-s.push('hi')
-console.log(s)
+const q = new Queue()
+q.enqueue(1)
+q.enqueue(23)
+q.enqueue(99)
+q.enqueue(100)
+q.enqueue('hi')
+console.log(q)
 
 
 /*  ------------------------------------------------------  */
