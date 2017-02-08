@@ -8,33 +8,29 @@
 class Queue {
 
   constructor() {
-    this.list = []
-    this.length = 0
+    this.queue = []
   }
 
   /*  ------------------------------------------------------  */
 
   //  add item to end of a queue.
   enqueue(item) {
-    this.length += 1
-    this.list.push(item)
+    this.queue.push(item)
   }
 
   /*  ------------------------------------------------------  */
 
   //  remove item from start of a queue.
   dequeue() {
-    if (this.length === 0) return
-    this.length -= 1
-    return this.list.shift()
+    if (this.queue.length === 0) return
+    return this.queue.shift()
   }
-
 
   /*  ------------------------------------------------------  */
 
   //  return (without removing) the top item from a queue.
   peek() {
-    return this.list[0]
+    return this.queue[0]
   }
 
   /*  ------------------------------------------------------  */
@@ -42,39 +38,38 @@ class Queue {
   //  reverse the order of a queue.
   reverse() {
     const arr = []
-    for (let i = this.length - 1; i >= 0; i--) {
-      arr.push(this.list[i])
+    for (let i = this.queue.length - 1; i >= 0; i--) {
+      arr.push(this.queue[i])
     }
-    this.list = arr
+    this.queue = arr
   }
 
   /*  ------------------------------------------------------  */
 
   //  return size of a queue.
   size() {
-    return this.length
+    return this.queue.length
   }
 
   /*  ------------------------------------------------------  */
 
   //  convert queue to an array (already is).
   toArray() {
-    return this.list
+    return this.queue
   }
 
   /*  ------------------------------------------------------  */
 
   //  convert queue to a string.
   toString() {
-    return this.toArray().toString()
+    return this.queue.join(' ')
   }
 
   /*  ------------------------------------------------------  */
 
   //  clear a queue.
   clear() {
-    this.list = []
-    this.length = 0
+    this.queue = []
   }
 
 }

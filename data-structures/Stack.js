@@ -8,32 +8,29 @@
 class Stack {
 
   constructor() {
-    this.list = []
-    this.length = 0
+    this.stack = []
   }
 
   /*  ------------------------------------------------------  */
 
   //  add item to top of a stack.
   push(item) {
-    this.length += 1
-    this.list.push(item)
+    this.stack.push(item)
   }
 
   /*  ------------------------------------------------------  */
 
   //  remove item from top of a stack.
   pop() {
-    if (this.length === 0) return
-    this.length -= 1
-    return this.list.pop()
+    if (this.stack.length === 0) return
+    return this.stack.pop()
   }
 
   /*  ------------------------------------------------------  */
 
   //  return (without removing) item from top of a stack.
   peek() {
-    return this.list[this.length - 1]
+    return this.stack[this.stack.length - 1]
   }
 
   /*  ------------------------------------------------------  */
@@ -41,17 +38,17 @@ class Stack {
   //  reverse order of a stack.
   reverse() {
     const arr = []
-    for (let i = 0; i < this.length; i++) {
-      arr.push(this.list.pop())
+    for (let i = 0; i < this.stack.length; i++) {
+      arr.push(this.stack.pop())
     }
-    this.list = arr
+    this.stack = arr
   }
 
   /*  ------------------------------------------------------  */
 
   //  return size of a stack.
   size() {
-    return this.length
+    return this.stack.length
   }
 
   /*  ------------------------------------------------------  */
@@ -65,15 +62,14 @@ class Stack {
 
   //  convert stack to a string.
   toString() {
-    return this.toArray().toString()
+    return this.stack.join(' ')
   }
 
   /*  ------------------------------------------------------  */
 
   //  clear a stack.
   clear() {
-    this.list = []
-    this.length = 0
+    this.stack = []
   }
 
 }
