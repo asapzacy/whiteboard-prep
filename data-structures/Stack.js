@@ -1,6 +1,4 @@
 
-//  implement a stack.
-
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
 
@@ -13,63 +11,38 @@ class Stack {
 
   /*  ------------------------------------------------------  */
 
-  //  add item to top of a stack.
-  push(item) {
-    this.stack.push(item)
+  push(value) {
+    this.stack.push(value)
   }
 
   /*  ------------------------------------------------------  */
 
-  //  remove item from top of a stack.
   pop() {
-    if (this.stack.length === 0) return
     return this.stack.pop()
   }
 
   /*  ------------------------------------------------------  */
 
-  //  return (without removing) item from top of a stack.
   peek() {
     return this.stack[this.stack.length - 1]
   }
 
   /*  ------------------------------------------------------  */
 
-  //  reverse order of a stack.
-  reverse() {
-    const arr = []
-    for (let i = 0; i < this.stack.length; i++) {
-      arr.push(this.stack.pop())
-    }
-    this.stack = arr
-  }
-
-  /*  ------------------------------------------------------  */
-
-  //  return size of a stack.
   size() {
     return this.stack.length
   }
 
   /*  ------------------------------------------------------  */
 
-  //  convert stack to an array (already is).
-  toArray() {
-    return this.list
+  print() {
+    console.log(this.stack.join(' rf'))
   }
 
   /*  ------------------------------------------------------  */
 
-  //  convert stack to a string.
-  toString() {
-    return this.stack.join(' ')
-  }
-
-  /*  ------------------------------------------------------  */
-
-  //  clear a stack.
-  clear() {
-    this.stack = []
+  reverse() {
+    return this.stack.reverse()
   }
 
 }
@@ -79,13 +52,28 @@ class Stack {
 /*  ------------------------------------------------------  */
 
 
+const assert = require('assert')
 const s = new Stack()
+
+/*  ------------------------------------------------------  */
+
+assert.equal(s.size(), 0)
 s.push(1)
 s.push(23)
 s.push(99)
 s.push(100)
 s.push('hi')
-console.log(s)
+assert.equal(s.size(), 5)
+assert.equal(s.peek(), 'hi')
+s.pop()
+assert.equal(s.peek(), 100)
+assert.equal(s.size(), 4)
+s.reverse()
+assert.equal(s.peek(), 1)
+s.push(-1)
+s.push(true)
+assert.equal(s.pop(), true)
+assert.equal(s.peek(), -1)
 
 
 /*  ------------------------------------------------------  */
