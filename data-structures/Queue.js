@@ -36,7 +36,7 @@ class Queue {
   /*  ------------------------------------------------------  */
 
   print() {
-    console.log(this.queue.join(' '))
+    console.log(`queue: ${this.queue.join(' ')}`)
   }
 
   /*  ------------------------------------------------------  */
@@ -74,6 +74,8 @@ q.enqueue(-1)
 q.enqueue(true)
 assert.equal(q.dequeue(), 'hi')
 assert.equal(q.peek(), 100)
+q.print()     //  => queue: 100 99 23 -1 true
+
 
 
 /*  ------------------------------------------------------  */

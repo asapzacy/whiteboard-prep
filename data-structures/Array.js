@@ -11,20 +11,20 @@ class Array {
 
   /*  ------------------------------------------------------  */
 
-  add(data) {
-    this.array.push(data)
+  add(value) {
+    this.array.push(value)
   }
 
   /*  ------------------------------------------------------  */
 
-  remove(data) {
-    this.array = this.array.filter(item => item !== data)
+  remove(value) {
+    this.array = this.array.filter(item => item !== value)
   }
 
   /*  ------------------------------------------------------  */
 
-  search(data) {
-    return this.array.includes(data) ? this.array.indexOf(data) : null
+  search(value) {
+    return this.array.includes(value) ? this.array.indexOf(value) : null
   }
 
   /*  ------------------------------------------------------  */
@@ -42,7 +42,7 @@ class Array {
   /*  ------------------------------------------------------  */
 
   print() {
-    console.log(this.array.join(' '))
+    console.log(`array: ${this.array.join(' ')}`)
   }
 
 }
@@ -72,6 +72,7 @@ a.remove(100)
 assert.equal(a.size(), 4)
 assert.equal(a.search('hi'), 3)
 assert.equal(a.search('missing'), null)
+a.print()     //  => array: 1 23 99 hi
 
 
 /*  ------------------------------------------------------  */

@@ -36,7 +36,7 @@ class Stack {
   /*  ------------------------------------------------------  */
 
   print() {
-    console.log(this.stack.join(' rf'))
+    console.log(`stack: ${this.stack.join(' ')}`)
   }
 
   /*  ------------------------------------------------------  */
@@ -74,6 +74,7 @@ s.push(-1)
 s.push(true)
 assert.equal(s.pop(), true)
 assert.equal(s.peek(), -1)
+s.print()     //  => stack: 100 99 23 1 -1
 
 
 /*  ------------------------------------------------------  */
