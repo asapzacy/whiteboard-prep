@@ -1,6 +1,4 @@
 
-//  implement a queue.
-
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
 
@@ -13,63 +11,38 @@ class Queue {
 
   /*  ------------------------------------------------------  */
 
-  //  add item to end of a queue.
-  enqueue(item) {
-    this.queue.push(item)
+  enqueue(value) {
+    this.queue.push(value)
   }
 
   /*  ------------------------------------------------------  */
 
-  //  remove item from start of a queue.
   dequeue() {
-    if (this.queue.length === 0) return
     return this.queue.shift()
   }
 
   /*  ------------------------------------------------------  */
 
-  //  return (without removing) the top item from a queue.
   peek() {
     return this.queue[0]
   }
 
   /*  ------------------------------------------------------  */
 
-  //  reverse the order of a queue.
-  reverse() {
-    const arr = []
-    for (let i = this.queue.length - 1; i >= 0; i--) {
-      arr.push(this.queue[i])
-    }
-    this.queue = arr
-  }
-
-  /*  ------------------------------------------------------  */
-
-  //  return size of a queue.
   size() {
     return this.queue.length
   }
 
   /*  ------------------------------------------------------  */
 
-  //  convert queue to an array (already is).
-  toArray() {
-    return this.queue
+  print() {
+    console.log(this.queue.join(' '))
   }
 
   /*  ------------------------------------------------------  */
 
-  //  convert queue to a string.
-  toString() {
-    return this.queue.join(' ')
-  }
-
-  /*  ------------------------------------------------------  */
-
-  //  clear a queue.
-  clear() {
-    this.queue = []
+  reverse() {
+    this.queue.reverse()
   }
 
 }
@@ -79,13 +52,28 @@ class Queue {
 /*  ------------------------------------------------------  */
 
 
+const assert = require('assert')
 const q = new Queue()
+
+/*  ------------------------------------------------------  */
+
+assert.equal(q.size(), 0)
 q.enqueue(1)
 q.enqueue(23)
 q.enqueue(99)
 q.enqueue(100)
 q.enqueue('hi')
-console.log(q)
+assert.equal(q.size(), 5)
+assert.equal(q.peek(), 1)
+q.dequeue()
+assert.equal(q.peek(), 23)
+assert.equal(q.size(), 4)
+q.reverse()
+assert.equal(q.peek(), 'hi')
+q.enqueue(-1)
+q.enqueue(true)
+assert.equal(q.dequeue(), 'hi')
+assert.equal(q.peek(), 100)
 
 
 /*  ------------------------------------------------------  */
