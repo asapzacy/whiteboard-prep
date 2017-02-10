@@ -52,10 +52,10 @@ class HashTable {
 
 
 const assert = require('assert')
-const ht = new HashTable()
 
 /*  ------------------------------------------------------  */
 
+const ht = new HashTable()
 ht.set('one', 1)
 ht.set('two', 23)
 ht.set('three', 99)

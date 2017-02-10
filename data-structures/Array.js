@@ -53,10 +53,10 @@ class Array {
 
 
 const assert = require('assert')
-const a = new Array()
 
 /*  ------------------------------------------------------  */
 
+const a = new Array()
 assert.equal(a.size(), 0)
 a.add(1)
 a.add(23)

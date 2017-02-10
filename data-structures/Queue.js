@@ -36,7 +36,7 @@ class Queue {
   /*  ------------------------------------------------------  */
 
   print() {
-    console.log(`queue: ${this.queue.join(' ')}`)
+    console.log(`Queue: ${this.queue.join(' ')}`)
   }
 
   /*  ------------------------------------------------------  */
@@ -53,10 +53,10 @@ class Queue {
 
 
 const assert = require('assert')
-const q = new Queue()
 
 /*  ------------------------------------------------------  */
 
+const q = new Queue()
 assert.equal(q.size(), 0)
 q.enqueue(1)
 q.enqueue(23)
@@ -74,8 +74,7 @@ q.enqueue(-1)
 q.enqueue(true)
 assert.equal(q.dequeue(), 'hi')
 assert.equal(q.peek(), 100)
-q.print()     //  => queue: 100 99 23 -1 true
-
+q.print()     //  => Queue: 100 99 23 -1 true
 
 
 /*  ------------------------------------------------------  */

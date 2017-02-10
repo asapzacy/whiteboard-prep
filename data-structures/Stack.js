@@ -36,7 +36,7 @@ class Stack {
   /*  ------------------------------------------------------  */
 
   print() {
-    console.log(`stack: ${this.stack.join(' ')}`)
+    console.log(`Stack: ${this.stack.join(' ')}`)
   }
 
   /*  ------------------------------------------------------  */
@@ -53,10 +53,10 @@ class Stack {
 
 
 const assert = require('assert')
-const s = new Stack()
 
 /*  ------------------------------------------------------  */
 
+const s = new Stack()
 assert.equal(s.size(), 0)
 s.push(1)
 s.push(23)
@@ -74,7 +74,7 @@ s.push(-1)
 s.push(true)
 assert.equal(s.pop(), true)
 assert.equal(s.peek(), -1)
-s.print()     //  => stack: 100 99 23 1 -1
+s.print()     //  => Stack: 100 99 23 1 -1
 
 
 /*  ------------------------------------------------------  */
