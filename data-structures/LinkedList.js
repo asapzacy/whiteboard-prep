@@ -1,7 +1,7 @@
 
+/*  ------------------------------------------------------  */
+/*  ------------------------------------------------------  */
 
-/*  ------------------------------------------------------  */
-/*  ------------------------------------------------------  */
 
 class LinkedList {
 
@@ -108,7 +108,7 @@ class LinkedList {
       str += `${current.data} `
       current = current.next
     }
-    console.log(`SinglyLinkedList: ${str.trim()}`)
+    console.log(`LinkedList: ${str.trim()}`)
   }
 
   /*  ------------------------------------------------------  */
@@ -271,7 +271,7 @@ ll.add('d')
 ll.add('e')
 assert.equal(ll.size(), 5)
 assert.equal(ll.find(2).data, 'c')
-ll.print()     //  => SinglyLinkedList: a b c d e
+ll.print()     //  => LinkedList: a b c d e
 ll.remove(0)
 assert.equal(ll.head.data, 'b')
 ll.insert('a', 0)
@@ -280,12 +280,12 @@ assert.throws(() => ll.find(10), Error)
 assert.throws(() => ll.find(-1), Error)
 ll.add('a')
 ll.add('a')
-ll.print()     //  => SinglyLinkedList: a b c d e a a
+ll.print()     //  => LinkedList: a b c d e a a
 assert.equal(ll.size(), 7)
 assert.equal(ll.head.data, 'a')
 assert.equal(ll.findTail().data, 'a')
 ll.delete('a')
-ll.print()     //  => SinglyLinkedList: b c d e
+ll.print()     //  => LinkedList: b c d e
 assert.equal(ll.size(), 4)
 assert.equal(ll.head.data, 'b')
 assert.equal(ll.findTail().data, 'e')
@@ -300,11 +300,11 @@ ll.add('c')
 ll.add('d')
 ll.add('c')
 ll.add('d')
-ll.print()     //  => SinglyLinkedList: a b c d e c d c d
+ll.print()     //  => LinkedList: a b c d e c d c d
 assert.equal(ll.size(), 9)
 ll.removeDuplicates()
 assert.equal(ll.size(), 5)
-ll.print()     //  => SinglyLinkedList: a b c d e
+ll.print()     //  => LinkedList: a b c d e
 
 /*  ------------------------------------------------------  */
 
