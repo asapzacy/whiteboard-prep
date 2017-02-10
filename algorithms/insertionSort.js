@@ -3,27 +3,17 @@
 /*  ------------------------------------------------------  */
 
 
-const selectionSort = (arr) => {
+const insertionSort = (arr) => {
   for (let i = 0; i < arr.length; i++) {
-    let min = i
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[min]) {
-        min = j
-      }
+    let temp = arr[i]
+    let j = i - 1
+    while (j >= 0 && arr[j] > temp) {
+      arr[j + 1] = arr[j]
+      j--
     }
-    if (i !== min) {
-      swap(arr, i, min)
-    }
+    arr[j + 1] = temp
   }
   return arr
-}
-
-/*  ------------------------------------------------------  */
-
-const swap = (arr, i, j) => {
-  const temp = arr[i]
-  arr[i] = arr[j]
-  arr[j] = temp
 }
 
 
@@ -33,7 +23,7 @@ const swap = (arr, i, j) => {
 const assert = require('assert')
 
 const arr = [3,2,4,6,7,0,1,8,5,9]
-assert.deepEqual(selectionSort(arr), [0,1,2,3,4,5,6,7,8,9])
+assert.deepEqual(insertionSort(arr), [0,1,2,3,4,5,6,7,8,9])
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
