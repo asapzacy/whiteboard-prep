@@ -3,12 +3,16 @@
 /*  ------------------------------------------------------  */
 
 
-const bubbleSort = (arr) => {
-  for (let i = arr.length - 1; i >= 0; i--) {
-    for (let j = arr.length - i; j >= 0; j--) {
-      if (arr[j] < arr[j - 1]) {
-        [ arr[j], arr[j - 1] ] = [ arr[j - 1], arr[j] ]
+const selectionSort = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    let min = i
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[min]) {
+        min = j
       }
+    }
+    if (i !== min) {
+      [arr[i], arr[min]] = [arr[min], arr[i]]
     }
   }
   return arr
@@ -24,7 +28,7 @@ const assert = require('assert')
 /*  ------------------------------------------------------  */
 
 const arr = [3,2,4,6,7,0,1,8,5,9]
-assert.deepEqual(bubbleSort(arr), [0,1,2,3,4,5,6,7,8,9])
+assert.deepEqual(selectionSort(arr), [0,1,2,3,4,5,6,7,8,9])
 
 
 /*  ------------------------------------------------------  */
