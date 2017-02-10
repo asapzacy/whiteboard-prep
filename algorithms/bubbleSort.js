@@ -6,19 +6,12 @@
 const bubbleSort = (arr) => {
   for (let i = arr.length - 1; i >= 0; i--) {
     for (let j = arr.length - i; j >= 0; j--) {
-      if (arr[j] < arr[j - 1] )
-      swap(arr, j, j-1)
+      if (arr[j] < arr[j - 1]) {
+        [ arr[j], arr[j-1] ] = [ arr[j-1], arr[j] ]
+      }
     }
   }
   return arr
-}
-
-/*  ------------------------------------------------------  */
-
-const swap = (arr, i, j) => {
-  const temp = arr[i]
-  arr[i] = arr[j]
-  arr[j] = temp
 }
 
 
