@@ -41,7 +41,7 @@ const arr4 = [4,6,9,8,0,5,2,1,7,3]
 assert.deepEqual(bubbleSort(arr), sorted)
 const arr5 = [9,4,5,0,8,1,2,7,3,6]
 assert.deepEqual(bubbleSort(arr), sorted)
-g
+
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
