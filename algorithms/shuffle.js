@@ -7,17 +7,11 @@
 const shuffle = (arr) => {
   for (let i = arr.length - 1; i >= 0; i--) {
     const random = Math.floor(Math.random() * (i + 1))
-    swap(arr, random, i)
+    const temp = arr[random]
+    arr[random] = arr[i]
+    arr[i] = temp
   }
   return arr
-}
-
-/*  ------------------------------------------------------  */
-
-const swap = (arr, i, j) => {
-  const temp = arr[i]
-  arr[i] = arr[j]
-  arr[j] = temp
 }
 
 
