@@ -25,6 +25,7 @@ const binarySearch = (arr, target) => {
 const assert = require('assert')
 
 const arr = ['a','b','c','d','e','f','g','h','i','j']
+assert.equal(binarySearch(arr, ''), -1)
 assert.equal(binarySearch(arr, 'a'), 0)
 assert.equal(binarySearch(arr, 'b'), 1)
 assert.equal(binarySearch(arr, 'c'), 2)
@@ -35,6 +36,8 @@ assert.equal(binarySearch(arr, 'g'), 6)
 assert.equal(binarySearch(arr, 'h'), 7)
 assert.equal(binarySearch(arr, 'i'), 8)
 assert.equal(binarySearch(arr, 'j'), 9)
+assert.equal(binarySearch(arr, 'k'), -1)
+
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
