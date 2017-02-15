@@ -3,18 +3,12 @@
 /*  ------------------------------------------------------  */
 
 
-const isSubsequence = (sub, str) => {
-  if (!sub) return true
-  let count = 0
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === sub[count]) {
-      count += 1
-      if (count === sub.length) {
-        return true
-      }
-    }
+const findComplement = (x) => {
+  const bin = x.toString(2).split('')
+  for (let i = 0; i < bin.length; i++) {
+    bin[i] = 1 - bin[i]
   }
-  return false
+  return parseInt(bin.join(''), 2)
 }
 
 
@@ -23,8 +17,8 @@ const isSubsequence = (sub, str) => {
 
 const assert = require('assert')
 
-assert.equal(isSubsequence('abc', 'ahbgdc'), true)
-assert.equal(isSubsequence('axc', 'ahbgdc'), false)
+assert.equal(findComplement(5), 2)
+assert.equal(findComplement(1), 0)
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
