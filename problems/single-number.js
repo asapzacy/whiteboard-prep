@@ -16,18 +16,23 @@ const singleNumber = (arr) => {
   return
 }
 
+/*  ------------------------------------------------------  */
+
+const singleNumber2 = (arr) => arr.reduce((a, b) => a ^ b)
+
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
 
 const assert = require('assert')
 
-const arr = [-1,-1,1]
-const arr2 = [0,99,55,101,99,55,101]
-const arr3 = [1,2,3,4,5,6,7,8,9,1,2,3,4,5,7,8,9]
+const arr = [0,1,0]
+const arr2 = [1,2,3,1,2]
 assert.equal(singleNumber(arr), 1)
-assert.equal(singleNumber(arr2), 0)
-assert.equal(singleNumber(arr3), 6)
+assert.equal(singleNumber(arr2), 3)
+assert.equal(singleNumber2(arr), 1)
+assert.equal(singleNumber2(arr2), 3)
+
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
