@@ -13,7 +13,7 @@ const fizzbuzz = (x) => {
     if (i % 5 === 0) {
       str += 'Buzz'
     }
-    arr.push(str || i)
+    arr.push(str || String(i))
   }
   return arr
 }
@@ -24,6 +24,7 @@ const fizzbuzz = (x) => {
 
 const assert = require('assert')
 
+console.log(fizzbuzz(3))
 assert.deepEqual(fizzbuzz(1), ['1'])
 assert.deepEqual(fizzbuzz(2), ['1', '2'])
 assert.deepEqual(fizzbuzz(3), ['1', '2', 'Fizz'])
