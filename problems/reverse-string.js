@@ -22,8 +22,8 @@ const reverseString2 = (str) => {
 /*  ------------------------------------------------------  */
 
 const reverseString3 = (str) => {
-  if (str.length === 1) {
-    return str
+  if (str === '') {
+    return ''
   }
   return reverseString3(str.slice(1)) + str.charAt(0)
 }

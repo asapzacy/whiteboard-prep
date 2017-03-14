@@ -21,9 +21,9 @@ const twoSum = (arr, target) => {
 
 const assert = require('assert')
 
-const arr = [2,7,11,15]
-const target = 9
-assert.deepEqual(twoSum(arr, target), [0,1])
+assert.deepEqual(twoSum([2,7,11,15], 9), [0,1])
+assert.deepEqual(twoSum([1,2,3,4,5], 99), false)
+
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
