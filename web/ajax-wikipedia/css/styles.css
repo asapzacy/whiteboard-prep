@@ -1,0 +1,8 @@
+
+/* -------  test  ------- */
+body { background:mediumseagreen }
+#app { height:100%;width:100%;display:flex;align-items:center;justify-content:center }
+main { font-size:1.2em }
+.og { font-weight:100;font-size:5em;cursor:pointer }
+h1 { font-size:4em }
+a { border-bottom:1px solid }

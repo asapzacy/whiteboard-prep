@@ -1,0 +1,23 @@
+{
+  "name": "ajax-wikipedia",
+  "description": "AJAX wikipedia example in vanilla JavaScript",
+  "version": "1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --directory --server --no-open --no-notify --files './**/*.js,./**/*.css,./**/*.html'"
+  },
+  "repository": "git@github.com:zacarellano/create-static-website.git",
+  "author": "Zac Arellano <zaccc@email.arizona.edu>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zacarellano/ajax-wikipedia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zacarellano/ajax-wikipedia/issues"
+  },
+  "homepage": "https://zacarellano.github.io/ajax-wikipedia"
+}
