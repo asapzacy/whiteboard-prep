@@ -1,19 +1,15 @@
-a
+
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
 
 
-const insertionSort = (arr) => {
+const capitalizeString = (str) => {
+  const arr = str.split(' ')
   for (let i = 0; i < arr.length; i++) {
-    let temp = arr[i]
-    let j = i - 1
-    while (j >= 0 && arr[j] > temp) {
-      arr[j + 1] = arr[j]
-      j -= 1 
-    }
-    arr[j + 1] = temp
+    const word = arr[i]
+    arr[i] = word[0].toUpperCase() + word.slice(1)
   }
-  return arr
+  return arr.join(' ')
 }
 
 
@@ -22,8 +18,10 @@ const insertionSort = (arr) => {
 
 const assert = require('assert')
 
-const arr = [3,2,4,6,7,0,1,8,5,9]
-assert.deepEqual(insertionSort(arr), [0,1,2,3,4,5,6,7,8,9])
+assert.equal(capitalizeString('x'), 'X')
+assert.equal(capitalizeString('hello'), 'Hello')
+assert.equal(capitalizeString('hi, how are you?'), 'Hi, How Are You?')
+assert.equal(capitalizeString('it is a nice day outside.'), 'It Is A Nice Day Outside.')
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
