@@ -4,7 +4,6 @@
 
 
 const isPowerOfThree = (x) => {
-  console.log(x)
   if (x === 1) {
     return true
   }
