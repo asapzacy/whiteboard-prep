@@ -3,15 +3,14 @@
 /*  ------------------------------------------------------  */
 
 
-const firstUniqueChar = (str) => {
-  const obj = {}
-  str.split('').forEach(item => obj[item] = (obj[item] || 0) + 1)
-  for (let i = 0; i < str.length; i++) {
-    if (obj[str[i]] === 1) {
-      return i
-    }
-   }
-   return -1
+const diagonalDiff = (x, arr) => {
+  let leftSum = 0
+  let rightSum = 0
+  for (let i = 0; i < x; i++) {
+    leftSum += arr[i][i]
+    rightSum += arr[i][x - (i + 1)]
+  }
+  return Math.abs(leftSum - rightSum)
 }
 
 
@@ -20,8 +19,8 @@ const firstUniqueChar = (str) => {
 
 const assert = require('assert')
 
-assert.equal(firstUniqueChar('leetcode'), 0)
-assert.equal(firstUniqueChar('loveleetcode'), 2)
+assert.equal(diagonalDiff(3,[[1,2,3],[4,5,6],[7,8,9]]), 0)
+assert.equal(diagonalDiff(3, [[11,2,4],[4,5,6],[10,8,-12]]), 15)
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */

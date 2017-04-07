@@ -8,7 +8,6 @@ const fibonacci = (x) => {
   let b = 0
   let temp
   while (x >= 0) {
-    console.log(b)
     temp = a
     a += b
     b = temp

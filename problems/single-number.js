@@ -32,6 +32,8 @@ assert.equal(singleNumber(arr), 1)
 assert.equal(singleNumber(arr2), 3)
 assert.equal(singleNumber2(arr), 1)
 assert.equal(singleNumber2(arr2), 3)
+assert.equal(singleNumber3(arr), 1)
+assert.equal(singleNumber3(arr2), 3)
 
 
 /*  ------------------------------------------------------  */
