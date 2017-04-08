@@ -12,11 +12,7 @@ const hackerrankString = (str) => {
       count += 1
     }
   }
-  if (count === word.length) {
-    return 'YES'
-  } else {
-    return 'NO'
-  }
+  return count === word.length
 }
 
 
@@ -25,9 +21,9 @@ const hackerrankString = (str) => {
 
 const assert = require('assert')
 
-assert.equal(hackerrankString(''), 'NO')
-assert.equal(hackerrankString('hackerworld'), 'NO')
-assert.equal(hackerrankString('hereiamstackerrank'), 'YES')
+assert.equal(hackerrankString(''), false)
+assert.equal(hackerrankString('hackerworld'), false)
+assert.equal(hackerrankString('hereiamstackerrank'), true)
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
