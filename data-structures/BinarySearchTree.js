@@ -287,6 +287,7 @@ bst.add(1)
 bst.add(14)
 bst.add(13)
 console.log(bst)
+console.log(bst.contains(7))
 
 
 /*  ------------------------------------------------------  */
