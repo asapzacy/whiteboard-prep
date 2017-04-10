@@ -3,7 +3,7 @@
 /*  ------------------------------------------------------  */
 
 
-const insertArray = (arr) => {
+const insertionSortP1 = (arr) => {
   const val = arr[arr.length - 1]
   for (let i = arr.length - 2; i >= -1; i--) {
     if (val < arr[i]) {
@@ -22,9 +22,9 @@ const insertArray = (arr) => {
 
 const assert = require('assert')
 
-assert.deepEqual(insertArray([2,4,6,8,3]), [2,3,4,6,8])
-assert.deepEqual(insertArray([2,3,4,5,6,7,8,9,10,1]), [1,2,3,4,5,6,7,8,9,10])
-assert.deepEqual(insertArray([1,3,5,9,13,22,27,35,46,51,55,83,87,23]), [1,3,5,9,13,22,23,27,35,46,51,55,83,87])
+assert.deepEqual(insertionSortP1([2,4,6,8,3]), [2,3,4,6,8])
+assert.deepEqual(insertionSortP1([2,3,4,5,6,7,8,9,10,1]), [1,2,3,4,5,6,7,8,9,10])
+assert.deepEqual(insertionSortP1([1,3,5,9,13,22,27,35,46,51,55,83,87,23]), [1,3,5,9,13,22,23,27,35,46,51,55,83,87])
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
