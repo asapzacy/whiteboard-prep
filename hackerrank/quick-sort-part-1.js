@@ -6,7 +6,7 @@
 const quickSortP1 = (arr) => {
   const left = []
   const right = []
-  const val = arr[0]
+  const pivot = arr[0]
   for (let i = 1; i < arr.length; i++) {
     if (val > arr[i]) {
       left.push(arr[i])
