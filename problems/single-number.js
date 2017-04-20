@@ -20,6 +20,16 @@ const singleNumber = (arr) => {
 
 const singleNumber2 = (arr) => arr.reduce((a, b) => a ^ b)
 
+/*  ------------------------------------------------------  */
+
+const singleNumber3 = (arr) => {
+  const sorted = arr.sort((a, b) => a - b)
+  for (let i = 0; i < sorted.length; i += 2) {
+    if (arr[i] !== arr[i + 1]) {
+      return arr[i]
+    }
+  }
+}
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
