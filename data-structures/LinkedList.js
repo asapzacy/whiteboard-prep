@@ -246,6 +246,22 @@ class LinkedList {
 
   /*  ------------------------------------------------------  */
 
+  // without using this.length
+  findNthToLast_(index) {
+    let slowRunner = this.head
+    let fastRunner = this.head
+    for (let i = 0; i < index; i++) {
+      fastRunner = fastRunner.next
+    }
+    while (fastRunner && fastRunner.next) {
+      fastRunner = fastRunner.next
+      slowRunner = slowRunner.next
+    }
+    return slowRunner
+  }
+
+  /*  ------------------------------------------------------  */
+
   findTail() {
     return this.find(this.size() - 1)
   }
@@ -256,10 +272,7 @@ class LinkedList {
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
 
-
-const assert = require('assert')
-
-/*  ------------------------------------------------------  */
+const assert = require('assert');
 
 const ll = new LinkedList()
 assert.equal(ll.size(), 0)
@@ -338,7 +351,9 @@ assert.equal(ll4.findMiddle().data, 'y')
 assert.equal(ll4.findNthToLast(2).data, 'x')
 assert.equal(ll4.findNthToLast(1).data, 'y')
 assert.equal(ll4.findNthToLast(0).data, 'z')
-
+assert.equal(ll4.findNthToLast_(2).data, 'x')
+assert.equal(ll4.findNthToLast_(1).data, 'y')
+assert.equal(ll4.findNthToLast_(0).data, 'z')
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
