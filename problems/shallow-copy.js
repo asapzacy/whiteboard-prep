@@ -3,7 +3,7 @@
 /*  ------------------------------------------------------  */
 
 
-const deepCopy = (input) => {
+const shallowCopy = (input) => {
   let output
   if (typeof input === 'string' || typeof input === 'number' || typeof input === 'boolean') {
     output = input
@@ -11,13 +11,13 @@ const deepCopy = (input) => {
     if (Array.isArray(input)) {
       output = []
       for (let i = 0; i < input.length; i++) {
-        output[i] = deepCopy(input[i])
+        output[i] = input[i]
       }
     } else {
       output = {}
       for (let key in input) {
         if (input.hasOwnProperty(key)) {
-          output[key] = deepCopy(input[key])
+          output[key] = input[key]
         }
       }
     }
@@ -32,14 +32,14 @@ const deepCopy = (input) => {
 const assert = require('assert')
 
 const arr = [{ 'a': 1 }, { 'b': 2 }]          //  original array
-const arr2 = deepCopy(arr)                    //  copy array
+const arr2 = shallowCopy(arr)                 //  copy array
 assert.deepStrictEqual(arr, arr2)             //  same
 arr2[0].a -= 1                                //  change property on copy
 arr2[0].c = 3                                 //  add property on copy
-assert.notDeepStrictEqual(arr, arr2)          //  not same
-assert.equal(arr[0].a, 1)                     //  original array didn't change
+assert.deepStrictEqual(arr, arr2)             //  still same
+assert.equal(arr[0].a, 0)                     //  original array did change
 assert.equal(arr2[0].a, 0)                    //  copy array did change
-assert.equal(arr[0].c, undefined)             //  original array didn't change
+assert.equal(arr[0].c, 3)                     //  original array did change
 assert.equal(arr2[0].c, 3)                    //  copy array did change
 
 /*  ------------------------------------------------------  */
