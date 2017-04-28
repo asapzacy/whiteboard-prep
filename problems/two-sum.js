@@ -3,16 +3,32 @@
 /*  ------------------------------------------------------  */
 
 
+//  O(1) space - O(n) time
 const twoSum = (arr, target) => {
-  const obj = {}
+  const hash = {}
   for (let i = 0; i < arr.length; i++) {
     const diff = target - arr[i]
-    if (obj.hasOwnProperty(diff)) {
-      return [ obj[diff], i ]
+    if (hash.hasOwnProperty(diff)) {
+      return [ hash[diff], i ]
     }
-    obj[arr[i]] = i
+    hash[arr[i]] = i
   }
-  return false
+  return -1
+}
+
+/*  ------------------------------------------------------  */
+
+//  no extra space - but O(n^2) time
+const twoSum2 = (arr, target) => {
+  for (let i = 0; i < arr.length; i++) {
+    const diff = target - arr[i]
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] === diff) {
+        return [i, j]
+      }
+    }
+  }
+  return -1
 }
 
 
@@ -22,8 +38,9 @@ const twoSum = (arr, target) => {
 const assert = require('assert')
 
 assert.deepEqual(twoSum([2,7,11,15], 9), [0,1])
-assert.deepEqual(twoSum([1,2,3,4,5], 99), false)
-
+assert.deepEqual(twoSum([1,2,3,4,5], 99), -1)
+assert.deepEqual(twoSum2([2,7,11,15], 9), [0,1])
+assert.deepEqual(twoSum2([1,2,3,4,5], 99), -1)
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
