@@ -21,9 +21,8 @@ const mergeSortedArrays = (arr, arr2) => {
 
 const assert = require('assert')
 
-const arr = [1,3,5,7,9]
-const arr2 = [0,2,4,6,8]
-assert.deepEqual(mergeSortedArrays(arr, arr2), [0,1,2,3,4,5,6,7,8,9])
+assert.deepEqual(mergeSortedArrays([1,3,5], [2,4]), [1,2,3,4,5])
+assert.deepEqual(mergeSortedArrays([1,3,5,7,9], [0,2,4,6,8]), [0,1,2,3,4,5,6,7,8,9])
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
