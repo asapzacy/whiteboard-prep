@@ -49,6 +49,13 @@ const flattenArray3 = (arr) => {
   return result
 }
 
+/*  ------------------------------------------------------  */
+
+//  take 4. - recursive solution #3 (es6)
+const flattenArray4 = (arr) => arr.reduce(
+  (a, b) =>  a.concat(Array.isArray(b) ? flattenArray4(b) : b), []
+)
+
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
@@ -64,6 +71,9 @@ assert.deepStrictEqual(flattenArray2([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8]
 assert.deepStrictEqual(flattenArray3([[1],[2],[3],[4],[5]]), [1,2,3,4,5])
 assert.deepStrictEqual(flattenArray3([1,[2],[3,[4,[5]]]]), [1,2,3,4,5])
 assert.deepStrictEqual(flattenArray3([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8])
+assert.deepStrictEqual(flattenArray4([[1],[2],[3],[4],[5]]), [1,2,3,4,5])
+assert.deepStrictEqual(flattenArray4([1,[2],[3,[4,[5]]]]), [1,2,3,4,5])
+assert.deepStrictEqual(flattenArray4([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8])
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
