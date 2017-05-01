@@ -23,6 +23,13 @@ const move = (disc, from, to) => {
 /*  ------------------------------------------------------  */
 
 towersOfHanoi(3, 'A', 'B', 'C')
+// move disc 1 from A to C
+// move disc 2 from A to B
+// move disc 1 from C to B
+// move disc 3 from A to C
+// move disc 1 from B to A
+// move disc 2 from B to C
+// move disc 1 from A to C
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
