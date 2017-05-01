@@ -2,7 +2,8 @@
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
 
-//  basic linked list class
+
+//  basic linked-list class
 class LinkedList {
   constructor() {
     this.head = null
@@ -22,7 +23,6 @@ class LinkedList {
 }
 
 /*  ------------------------------------------------------  */
-
 
 LinkedList.prototype.findKthToLast = function(k) {
   if (k < 0) return false
