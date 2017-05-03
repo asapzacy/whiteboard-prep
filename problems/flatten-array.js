@@ -20,7 +20,7 @@ const flattenArray = (arr, result) => {
 /*  ------------------------------------------------------  */
 
 //  take 2. - iterative solution
-const flattenArray2 = (arr) => {
+const flattenArray_2 = (arr) => {
   const result = []
   while (arr.length) {
     const item = arr.shift()
@@ -36,12 +36,12 @@ const flattenArray2 = (arr) => {
 /*  ------------------------------------------------------  */
 
 //  take 3. - recursive solution #2
-const flattenArray3 = (arr) => {
+const flattenArray_3 = (arr) => {
   const result = []
   for (let i = 0; i < arr.length; i++) {
     const item = arr[i]
     if (Array.isArray(item)) {
-      result.push(...flattenArray3(item))
+      result.push(...flattenArray_3(item))
     } else {
       result.push(item)
     }
@@ -52,8 +52,8 @@ const flattenArray3 = (arr) => {
 /*  ------------------------------------------------------  */
 
 //  take 4. - recursive solution #3 (es6)
-const flattenArray4 = (arr) => arr.reduce(
-  (a, b) =>  a.concat(Array.isArray(b) ? flattenArray4(b) : b), []
+const flattenArray_4 = (arr) => arr.reduce(
+  (a, b) =>  a.concat(Array.isArray(b) ? flattenArray_4(b) : b), []
 )
 
 
@@ -65,15 +65,18 @@ const assert = require('assert')
 assert.deepStrictEqual(flattenArray([[1],[2],[3],[4],[5]]), [1,2,3,4,5])
 assert.deepStrictEqual(flattenArray([1,[2],[3,[4,[5]]]]), [1,2,3,4,5])
 assert.deepStrictEqual(flattenArray([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8])
-assert.deepStrictEqual(flattenArray2([[1],[2],[3],[4],[5]]), [1,2,3,4,5])
-assert.deepStrictEqual(flattenArray2([1,[2],[3,[4,[5]]]]), [1,2,3,4,5])
-assert.deepStrictEqual(flattenArray2([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8])
-assert.deepStrictEqual(flattenArray3([[1],[2],[3],[4],[5]]), [1,2,3,4,5])
-assert.deepStrictEqual(flattenArray3([1,[2],[3,[4,[5]]]]), [1,2,3,4,5])
-assert.deepStrictEqual(flattenArray3([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8])
-assert.deepStrictEqual(flattenArray4([[1],[2],[3],[4],[5]]), [1,2,3,4,5])
-assert.deepStrictEqual(flattenArray4([1,[2],[3,[4,[5]]]]), [1,2,3,4,5])
-assert.deepStrictEqual(flattenArray4([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8])
+
+assert.deepStrictEqual(flattenArray_2([[1],[2],[3],[4],[5]]), [1,2,3,4,5])
+assert.deepStrictEqual(flattenArray_2([1,[2],[3,[4,[5]]]]), [1,2,3,4,5])
+assert.deepStrictEqual(flattenArray_2([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8])
+
+assert.deepStrictEqual(flattenArray_3([[1],[2],[3],[4],[5]]), [1,2,3,4,5])
+assert.deepStrictEqual(flattenArray_3([1,[2],[3,[4,[5]]]]), [1,2,3,4,5])
+assert.deepStrictEqual(flattenArray_3([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8])
+
+assert.deepStrictEqual(flattenArray_4([[1],[2],[3],[4],[5]]), [1,2,3,4,5])
+assert.deepStrictEqual(flattenArray_4([1,[2],[3,[4,[5]]]]), [1,2,3,4,5])
+assert.deepStrictEqual(flattenArray_4([1,2,3,[4,5],[6,[7,8]]]), [1,2,3,4,5,6,7,8])
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */

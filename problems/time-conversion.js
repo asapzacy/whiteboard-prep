@@ -46,6 +46,7 @@ const assert = require('assert')
 assert.equal(timeConversionTo24('07:03:15PM'), '19:03:15')
 assert.equal(timeConversionTo24('01:53:55AM'), '01:53:55')
 assert.equal(timeConversionTo24('12:00:00AM'), '00:00:00')
+
 assert.equal(timeConversionTo12('19:03:15'), '07:03:15PM')
 assert.equal(timeConversionTo12('01:53:55'), '01:53:55AM')
 assert.equal(timeConversionTo12('00:00:00'), '12:00:00AM')

@@ -25,7 +25,7 @@ const beautifulBinaryStr = (str) => {
 
 /*  ------------------------------------------------------  */
 
-const beautifulBinaryStr2 = (str) => {
+const beautifulBinaryStr_2 = (str) => {
   const edited = str.replace(/010/g, 'x')
   const result = (edited.match(/x/g) || []).length
   return result
@@ -41,10 +41,11 @@ assert.equal(beautifulBinaryStr(''), 0)
 assert.equal(beautifulBinaryStr('01100'), 0)
 assert.equal(beautifulBinaryStr('0101010'), 2)
 assert.equal(beautifulBinaryStr('0100101010'), 3)
-assert.equal(beautifulBinaryStr2(''), 0)
-assert.equal(beautifulBinaryStr2('01100'), 0)
-assert.equal(beautifulBinaryStr2('0101010'), 2)
-assert.equal(beautifulBinaryStr2('0100101010'), 3)
+
+assert.equal(beautifulBinaryStr_2(''), 0)
+assert.equal(beautifulBinaryStr_2('01100'), 0)
+assert.equal(beautifulBinaryStr_2('0101010'), 2)
+assert.equal(beautifulBinaryStr_2('0100101010'), 3)
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */

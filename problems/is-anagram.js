@@ -9,7 +9,7 @@ const isAnagram = (str, str2) => {
 
 /*  ------------------------------------------------------  */
 
-const isAnagram2 = (str, str2) => {
+const isAnagram_2 = (str, str2) => {
   if (str.length !== str2.length) {
     return false
   }
@@ -40,9 +40,10 @@ const assert = require('assert')
 assert.equal(isAnagram('',''), true)
 assert.equal(isAnagram('rat','car'), false)
 assert.equal(isAnagram('anagram','nagaram'), true)
-assert.equal(isAnagram2('',''), true)
-assert.equal(isAnagram2('anagram','nagaram'), true)
-assert.equal(isAnagram2('rat','car'), false)
+
+assert.equal(isAnagram_2('',''), true)
+assert.equal(isAnagram_2('anagram','nagaram'), true)
+assert.equal(isAnagram_2('rat','car'), false)
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */

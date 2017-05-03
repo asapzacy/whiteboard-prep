@@ -26,9 +26,7 @@ const wordWrap = (str, size) => {
 
 const assert = require('assert')
 
-const str = 'the quick brown fox jumped over the fence.'
-const result = ['the quick brown ', 'fox jumped over ', 'the fence.']
-assert.deepEqual(wordWrap(str, 15), result)
+assert.deepEqual(wordWrap('the quick brown fox jumped over the fence.', 15), 'the quick brown ', 'fox jumped over ', 'the fence.')
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */

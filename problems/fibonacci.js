@@ -18,23 +18,23 @@ const fibonacci = (x) => {
 
 /*  ------------------------------------------------------  */
 
-const fibonacci2 = (x) => {
+const fibonacci_2 = (x) => {
   if (x === 0 || x === 1) {
     return 1
   }
-  return fibonacci2(x - 2) + fibonacci2(x - 1)
+  return fibonacci_2(x - 2) + fibonacci_2(x - 1)
 }
 
 /*  ------------------------------------------------------  */
 
-const fibonacci3 = (x, mem = {}) => {
+const fibonacci_3 = (x, mem = {}) => {
   if (mem[x]) {
     return mem[x]
   }
   if (x === 0 || x === 1) {
     return 1
   }
-  return mem[x] = fibonacci3(x - 2, mem) + fibonacci3(x - 1, mem)
+  return mem[x] = fibonacci_3(x - 2, mem) + fibonacci_3(x - 1, mem)
 }
 
 
@@ -46,12 +46,14 @@ const assert = require('assert')
 assert.equal(fibonacci(5), 8)
 assert.equal(fibonacci(10), 89)
 assert.equal(fibonacci(15), 987)
-assert.equal(fibonacci2(5), 8)
-assert.equal(fibonacci2(10), 89)
-assert.equal(fibonacci2(15), 987)
-assert.equal(fibonacci3(5), 8)
-assert.equal(fibonacci3(10), 89)
-assert.equal(fibonacci3(15), 987)
+
+assert.equal(fibonacci_2(5), 8)
+assert.equal(fibonacci_2(10), 89)
+assert.equal(fibonacci_2(15), 987)
+
+assert.equal(fibonacci_3(5), 8)
+assert.equal(fibonacci_3(10), 89)
+assert.equal(fibonacci_3(15), 987)
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */

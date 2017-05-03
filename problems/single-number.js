@@ -18,11 +18,11 @@ const singleNumber = (arr) => {
 
 /*  ------------------------------------------------------  */
 
-const singleNumber2 = (arr) => arr.reduce((a, b) => a ^ b)
+const singleNumber_2 = (arr) => arr.reduce((a, b) => a ^ b)
 
 /*  ------------------------------------------------------  */
 
-const singleNumber3 = (arr) => {
+const singleNumber_3 = (arr) => {
   const sorted = arr.sort((a, b) => a - b)
   for (let i = 0; i < sorted.length; i += 2) {
     if (arr[i] !== arr[i + 1]) {
@@ -36,14 +36,14 @@ const singleNumber3 = (arr) => {
 
 const assert = require('assert')
 
-const arr = [0,1,0]
-const arr2 = [1,2,3,1,2]
-assert.equal(singleNumber(arr), 1)
-assert.equal(singleNumber(arr2), 3)
-assert.equal(singleNumber2(arr), 1)
-assert.equal(singleNumber2(arr2), 3)
-assert.equal(singleNumber3(arr), 1)
-assert.equal(singleNumber3(arr2), 3)
+assert.equal(singleNumber([0,1,0]), 1)
+assert.equal(singleNumber([1,2,3,1,2]), 3)
+
+assert.equal(singleNumber_2([0,1,0]), 1)
+assert.equal(singleNumber_2([1,2,3,1,2]), 3)
+
+assert.equal(singleNumber_3([0,1,0]), 1)
+assert.equal(singleNumber_3([1,2,3,1,2]), 3)
 
 
 /*  ------------------------------------------------------  */

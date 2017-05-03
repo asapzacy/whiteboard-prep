@@ -26,7 +26,7 @@ const validParentheses = (str) => {
 /*  ------------------------------------------------------  */
 
 //  take 2. - with opening / closing arrays
-const validParentheses2 = (str) => {
+const validParentheses_2 = (str) => {
   const opening = [ '[', '(', '{' ]
   const closing = [ ']', ')', '}' ]
   const s = []
@@ -49,7 +49,7 @@ const validParentheses2 = (str) => {
 /*  ------------------------------------------------------  */
 
 //  take 3. - add closing brace to the stack
-const validParentheses3 = (str) => {
+const validParenthese_3 = (str) => {
   const s = []
   for (let i = 0; i < str.length; i++) {
     const ch = str[i]
@@ -87,18 +87,20 @@ assert.equal(validParentheses('{}[]()'), true)
 assert.equal(validParentheses('{[}]'), false)
 assert.equal(validParentheses(['{}[]()']), true)
 assert.equal(validParentheses(['[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]']), true)
-assert.equal(validParentheses2('['), false)
-assert.equal(validParentheses2('()'), true)
-assert.equal(validParentheses2('{}[]()'), true)
-assert.equal(validParentheses2('{[}]'), false)
-assert.equal(validParentheses2(['{}[]()']), true)
-assert.equal(validParentheses2(['[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]']), true)
-assert.equal(validParentheses3('['), false)
-assert.equal(validParentheses3('()'), true)
-assert.equal(validParentheses3('{}[]()'), true)
-assert.equal(validParentheses3('{[}]'), false)
-assert.equal(validParentheses3(['{}[]()']), true)
-assert.equal(validParentheses3(['[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]']), true)
+
+assert.equal(validParentheses_2('['), false)
+assert.equal(validParentheses_2('()'), true)
+assert.equal(validParentheses_2('{}[]()'), true)
+assert.equal(validParentheses_2('{[}]'), false)
+assert.equal(validParentheses_2(['{}[]()']), true)
+assert.equal(validParentheses_2(['[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]']), true)
+
+assert.equal(validParenthese_3('['), false)
+assert.equal(validParenthese_3('()'), true)
+assert.equal(validParenthese_3('{}[]()'), true)
+assert.equal(validParenthese_3('{[}]'), false)
+assert.equal(validParenthese_3(['{}[]()']), true)
+assert.equal(validParenthese_3(['[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]']), true)
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
