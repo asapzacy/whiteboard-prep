@@ -6,9 +6,9 @@
 const pangram = (str) => {
   const s = new Set()
   for (let i = 0; i < str.length; i++) {
-    const item = str[i] !== ' ' && str[i].toLowerCase()
-    if (item) {
-      s.add(item)
+    const ch = str[i] !== ' ' && str[i].toLowerCase()
+    if (ch) {
+      s.add(ch)
     }
   }
   return s.size === 26

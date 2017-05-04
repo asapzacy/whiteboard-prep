@@ -3,18 +3,13 @@
 /*  ------------------------------------------------------  */
 
 
-const singleNumberII = (arr) => {
-  let obj = {}
-  for (let i = 0; i < arr.length; i++) {
-    const item = arr[i]
-    obj[item] = (obj[item] || 3) - 1
-    if (obj[item] === 0) {
-      delete obj[item]
-    }
-  }
-  for (let key in obj) {
-    return Number(key)
-  }
+const findMissingNumber = (arr) => {
+  const high = Math.max(...arr)
+  const low = Math.min(...arr)
+  const sum = arr.reduce((a,b) => a + b, 0)
+  const highSum = (high * (high + 1)) / 2
+  const lowSum = (low * (low - 1)) / 2
+  return (highSum - lowSum) - sum
 }
 
 
@@ -23,8 +18,9 @@ const singleNumberII = (arr) => {
 
 const assert = require('assert')
 
-assert.equal(singleNumberII([0,1,0,0]), 1)
-assert.equal(singleNumberII([1,2,3,1,3,1,3]), 2)
+assert.equal(findMissingNumber([5,4,3,1,0]), 2)
+assert.equal(findMissingNumber([8,6,4,2,9,7,3,1]), 5)
+assert.equal(findMissingNumber([2,5,1,4,9,6,3,7]), 8)
 
 /*  ------------------------------------------------------  */
 /*  ------------------------------------------------------  */
